@@ -37,10 +37,9 @@ class POSCAR:
     coordSystem = ""
     atomNums = 0
 
-    def __init__(self, prototypeFile, atoms):
-        if prototypeFile is not None:
-            sourceFile = open(prototypeFile, 'r')
-            self.originProtoType = sourceFile.read()
+    def __init__(self, prototype, atoms):
+        if prototype is not None:
+            self.originProtoType = prototype
         self.originAtoms = atoms
         self.parseProtoTypeAndFillAtoms()
 
@@ -80,7 +79,7 @@ class POSCAR:
             for j in range(0, self.dist[i]):
                 atom = Atom()
                 coords = lines[index].strip().split()
-                if len(coords) != 3 and len(coords) != 4:
+                if len(coords) != 3:
                     raise Exception("Atom does not contain 3 coordinates!")
                 atom.setXYZ(float(coords[0]), float(coords[1]), float(coords[2]))
                 atom.setElement(elements[i])
