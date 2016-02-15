@@ -3,10 +3,13 @@
 import sys
 
 def readStringStream():
-    outputString="";
-    for line in sys.stdin:
-        outputString += line;
-    return outputString
+    if not sys.stdin.isatty():
+        outputString="";
+        for line in sys.stdin:
+            outputString += line;
+        return outputString
+    else:
+        return None
 
 if __name__ == "__main__":
     inputstr = readStringStream();
