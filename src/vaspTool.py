@@ -7,14 +7,11 @@ from io import readStringStream
 
 def executeFunction(args):
     if not args["poscar"]:
-        if args["ATOMS"] is None:
-            raise Exception("Invalid argument \"ATOMS\": no atoms found!")
         data = readStringStream()
-
         if args["STRUCTURE"] is not None:
             prototype = open(args["STRUCTURE"], 'r')
             data = prototype.read()
-        poscar = POSCAR(data, args["ATOMS"])
+        poscar = POSCAR(data, args)
 
         poscar.generatePOSCAR(args["OUTPUTPATH"])
     if args["ABCCAR"]:
