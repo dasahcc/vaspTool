@@ -1,4 +1,6 @@
-from common import isInt
+#!/usr/bin/env python
+from common.common import *
+#from common import isInt
 
 class Axis:
     x = 0.0
