@@ -1,5 +1,5 @@
-#!/opt/local/bin/python
-#vaspTool Developed in Prof. Yang's Research Group
+#!/usr/bin/env python
+#aimTool Developed in Prof. Yang's Research Group
 import sys
 
 def readStringStream():

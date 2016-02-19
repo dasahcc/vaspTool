@@ -1,4 +1,6 @@
+#!/usr/bin/env python
 from common import isInt
+
 
 class Axis:
     x = 0.0
